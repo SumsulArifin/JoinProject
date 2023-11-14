@@ -148,9 +148,9 @@ public class UserController {
     public void exportToExcel(HttpServletResponse response) throws IOException {
         response.setContentType("application/octet-stream");
         String headerKey = "Content-Disposition";
-        String headervalue = "attachment; filename=Student_info.xlsx";
+        String headerValue = "attachment; filename=Student_info.xlsx";
 
-        response.setHeader(headerKey, headervalue);
+        response.setHeader(headerKey, headerValue);
         List<User> listStudent = userRepository.findAll();
         UserExcelExporter exp = new UserExcelExporter(listStudent);
         exp.export(response);
